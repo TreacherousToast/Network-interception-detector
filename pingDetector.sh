@@ -19,6 +19,4 @@ else
 	else
 		echo "Your connection is probably safe"
 	fi
-	echo $TESTEDPING
-	echo $PING
 fi
