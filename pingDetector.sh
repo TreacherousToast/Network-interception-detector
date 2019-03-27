@@ -13,10 +13,11 @@ else
 	LINENUM="$(grep -n $SSID networkPings.txt | grep -Eo '^[^:]+')"
 	LINENUM=$(($LINENUM+1))
 	TESTEDPING=$(cat networkPings.txt | head -$LINENUM | tail -1)
-	TESTEDPING=$(perl -e "print $TESTEDPING+3")
-	if (( $(perl -e "print $PING>$TESTEDPING") )); then
+	if (( $(perl -e "print $PING>($TESTEDPING+2)") )); then
 		echo "Your connection may be comprimised"
 	else
 		echo "Your connection is probably safe"
 	fi
+	echo "Ping from file: $TESTEDPING"
+	echo "Ping tested: $PING"
 fi
