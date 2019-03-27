@@ -8,7 +8,7 @@ clear
 if [ "$SSIDINFILE" == "" ]; then
 	echo $SSID >> networkPings.txt
 	echo $PING >> networkPings.txt
-	echo "Added SSID to list (list is in home directory)"
+	echo "Added SSID to list"
 else
 	LINENUM="$(grep -n $SSID networkPings.txt | grep -Eo '^[^:]+')"
 	LINENUM=$(($LINENUM+1))
